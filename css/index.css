@@ -17,6 +17,7 @@ body {
   background-image: linear-gradient(to right, #ccc8b1 1px, rgba(204,200,177,0) 1px), linear-gradient(to bottom, #ccc8b1 1px, rgba(204,200,177,0) 1px);
   background-size: .3rem .3rem;
   font-family: helvetica, sans-serif;
+  line-height: 1.5;
 }
 
 ul {
@@ -40,40 +41,74 @@ a {
   padding: 40px;
 }
 
+/* Left double-border */
 .left-border {
   position: relative;
   padding: 0 40px;
 }
 .left-border::before {
-  content: "";
-  background: linear-gradient(to right, var(--main-color) 20% 60%, transparent 60% 80%, var(--main-color) 80%);
-  width: 16px;
-  height: 100%;
+  content: '';
   position: absolute;
+  top: 0;
   left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 0.3rem;
+  border: solid var(--main-color);
+  border-width: 0 0.2rem 0 0.6rem;
 }
 .left-border.dim::before {
-  background: linear-gradient(to right, #b4af9a 20% 60%, transparent 60% 80%, #b4af9a 80%);
+  border-color: #bab5a1;
 }
 
+/* Cursor */
 .cursor-wrapper {
   position: absolute;
-  left: 0;
+  left: -2px;
+  top: 6px;
 }
+.cursor-wrapper::before,
+.cursor-wrapper::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background-color: var(--main-color);
+  left: 28px;
+  border-radius: 50%;
+}
+.cursor-wrapper::before {
+  top: -2px;
+}
+.cursor-wrapper::after {
+  top: 10px;
+}
+.cursor-wrapper
 .cursor {
   width: 0;
   height: 0;
-  border: 8px solid transparent;
-  border-right: 12px solid var(--main-color);
+  border: 6px solid transparent;
+  border-right: 8px solid var(--main-color);
   position: absolute;
+}
+.cursor::before {
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  left: 6px;
+  top: -2px;
+  background-color: #d1cdb7;
+  border-radius: 50%;
+  z-index: 1;
 }
 .cursor::after {
   content: '';
   position: absolute;
   width: 0;
   height: 0;
-  border: 8px solid transparent;
-  border-left: 20px solid var(--main-color);
-  top: -8px;
-  left: 12px;
+  border: 6px solid transparent;
+  border-left: 16px solid var(--main-color);
+  top: -6px;
+  left: 8px;
 }
