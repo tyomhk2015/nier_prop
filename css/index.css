@@ -15,7 +15,7 @@ body {
   color: var(--main-color);
   background-color: #d1cdb7;
   background-image: linear-gradient(to right, #ccc8b1 1px, rgba(204,200,177,0) 1px), linear-gradient(to bottom, #ccc8b1 1px, rgba(204,200,177,0) 1px);
-  background-size: 0.3rem 0.3rem;
+  background-size: .3rem .3rem;
   font-family: helvetica, sans-serif;
 }
 
@@ -25,8 +25,8 @@ ul {
 
 h1,
 h2 {
-  letter-spacing: 0.5rem;
-  text-shadow: 0.3rem 0.3rem 0 #bab5a1;
+  letter-spacing: .5rem;
+  text-shadow: .3rem .3rem 0 #bab5a1;
 }
 
 a {
@@ -46,10 +46,34 @@ a {
 }
 .left-border::before {
   content: "";
-  background: linear-gradient(to right,
-  var(--main-color) 20% 60%, transparent 60% 80%, var(--main-color) 80%);
+  background: linear-gradient(to right, var(--main-color) 20% 60%, transparent 60% 80%, var(--main-color) 80%);
   width: 16px;
   height: 100%;
   position: absolute;
   left: 0;
+}
+.left-border.dim::before {
+  background: linear-gradient(to right, #b4af9a 20% 60%, transparent 60% 80%, #b4af9a 80%);
+}
+
+.cursor-wrapper {
+  position: absolute;
+  left: 0;
+}
+.cursor {
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+  border-right: 12px solid var(--main-color);
+  position: absolute;
+}
+.cursor::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+  border-left: 20px solid var(--main-color);
+  top: -8px;
+  left: 12px;
 }
