@@ -40,9 +40,14 @@ hr {
   margin: 20px 0;
 }
 
-/* Class Names */
+/*
+ *Class Names
+ */
 
 .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 40px;
 }
 
@@ -221,8 +226,11 @@ hr {
 
 /* Scroll bar */
 .scroll-bar {
-  height: 200px;
+  height: 16rem;
   overflow-y: auto;
   background-color: #dcd8c0;
   padding: 16px;
+}
+.scroll-bar-text + .scroll-bar-text {
+  margin-top: 1.5rem;
 }
