@@ -112,3 +112,50 @@ a {
   top: -6px;
   left: 8px;
 }
+
+/* Option */
+.option {
+  display: inline-block;
+  border: solid var(--main-color);
+  border-width: 0.1rem 0;
+  padding: 4px 1rem 4px 2rem;
+  position: relative;
+}
+.option::before {
+  content: '';
+  width: 1rem;
+  height: 1rem;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--main-color);
+  position: absolute;
+}
+.option::after {
+  content: '';
+  width: 0;
+  height: calc(100% - 3px);
+  background-color: var(--main-color);
+  background-size: 1px 1rem;
+  background-repeat: repeat-x;
+  transition: width 0.15s;
+  position: absolute;
+  top: 1px;
+  left: 0;
+}
+.option:hover::before {
+  background-color: #dcd8c0;
+  z-index: 1;
+}
+.option:hover::after {
+  width: 100%;
+}
+.option:hover,
+.option:hover > .option-text {
+  color: #dcd8c0;
+  z-index: 1;
+  position: relative;
+}
+.option-text {
+  /* text-indent: 28px; */
+}
