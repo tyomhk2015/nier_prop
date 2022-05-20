@@ -167,7 +167,7 @@ hr {
 }
 .option:hover,
 .option:hover > .option-text {
-  color:  var(--main-color-light);
+  color: var(--main-color-light);
   z-index: 1;
   position: relative;
 }
