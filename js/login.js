@@ -15,6 +15,7 @@ const findUser = () => {
   if(loadedUser) {
     loadData(loadedUser);
     toggleLogoutTab('login');
+    paintImage();
   } else {
     showLogin();
   }
@@ -39,7 +40,6 @@ const showLogin = () => {
 
 const loadData = (loadedUser) => {
   USER_ID = loadedUser;
-  console.log(loadedUser);
   USER_TODOS = JSON.parse(localStorage.getItem(loadedUser));
 }
 
