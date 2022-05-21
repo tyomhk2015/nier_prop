@@ -1,6 +1,6 @@
 # Nier Prop
 
-CSS code for styling page resembles Nier Automata.
+Nier Automata styled page.
 
 Ref:
 <a href="https://www.youtube.com/watch?v=WIrpMpTeeiU">Youtube</a>

@@ -4,65 +4,107 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Nier Automata styled page with basic JS features."/>
+    <link rel="icon" type="image/x-icon" href="/image/favicon.ico">
     <link rel="stylesheet" href="/css/index.css" />
-    <title>Nier Prop</title>
+    <title>YORHA</title>
   </head>
 
   <body>
     <div class="wrapper">
-
-      <h1>Reference</h1>
-
+      <header>
+        <h1></a><img class="logo" src="./image/logo.png" alt="YORHA logo">YORHA</h1>
+        <nav>
+          <ul class="navigation-ul js-navigation-ul">
+            <li id="home" class="option active js-sound-cursor js-tab"><p class="option-text">HOME</p></li>
+            <li id="todo" class="option js-sound-cursor js-tab"><p class="option-text">TO DO</p></li>
+            <li id="gallery" class="option js-sound-cursor js-tab"><p class="option-text">GALLERY</p></li>
+            <li id="weather" class="option js-sound-cursor js-tab"><p class="option-text">WEATHER</p></li>
+            <li id="logout" class="option logout inactive js-sound-cursor js-logout"><p class="option-text">LOGOUT</p></li>
+          </ul>
+        </nav>
+      </header>
       <hr>
-
-      <ul class="left-border">
-        <li>
-          <a href="https://www.youtube.com/watch?v=WIrpMpTeeiU">UI video</a>
+      <main>
+        <div class="content-wrapper js-content-wrapper">
+          <section class="home js-home js-content">
+            <h2>HOME</h3>
+            <div class="profile">
+              <p>突如侵略してきた異星人。そして、彼らが繰り出す兵器「機械生命体」。圧倒的戦力の前に、人類は地上を追われ月へと逃げ延びていた。</p>
+            </div>
+          </section>
+          <section class="todo js-todo js-content active">
+            <h2>TODO</h3>
+            <div class="todo-wrapper">
+              <div class="todo-display menu">
+                <div class="menu-head">TASK</div>
+                <div class="menu-body"></div>
+              </div>
+              <form class="todo-form menu">
+                <div class="menu-head">REGISTER</div>
+                <div class="menu-body">
+                  <input type="text" class="text-input todo-input" placeholder="YOUR TASK"/>
+                  <button class="button js-sound-cursor js-todo-submit">Enter</button>
+                </div>
+              </form>
+            </div>
+          </section>
+          <section class="gallery js-gallery js-content">
+            <h2>GALLERY</h3>
+          </section>
+          <section class="weather js-weather js-content">
+            <h3>WEATHER</h3>
+          </section>
+        </div>
+      </main>
+      <hr>
+      <footer>
+        <div class="clock-wrapper js-clock-wrapper">
           <div class="cursor-wrapper">
             <div class="cursor"></div>
           </div>
-        </li>
-        <li>
-          <a href="https://metakirby5.github.io/yorha/">HTML/CSS</a>
-        </li>
-      </ul>
-
-      <hr>
-
-      <ul class="left-border dim">
-        <li>
-          <a href="https://www.youtube.com/watch?v=WIrpMpTeeiU">UI video</a>
-          <div class="cursor-wrapper">
-            <div class="cursor"></div>
+          <p class="clock js-clock">00:00:00</p>
+        </div>
+      </footer>
+    </div>
+    <div class="login-modal js-login-modal">
+      <div class="menu login-wrapper">
+        <div class="menu-head">YORHA AUTHENTICATOR</div>
+        <div class="menu-body">
+          <div class="login-container left-border dim">
+            <h2>LOGIN</h2>
+            <form class="login-form js-login-form">
+              <dl>
+                <dt><h3>ID</h3></dt>
+                <dd>
+                  <div class="cursor-wrapper">
+                    <div class="cursor"></div>
+                  </div>
+                  <input type="text" class="text-input login-id js-login-id"/>
+                </dd>
+                <dt><h3>PASSWORD</h3></dt>
+                <dd>
+                  <div class="cursor-wrapper">
+                    <div class="cursor"></div>
+                  </div>
+                  <input type="text" class="text-input login-password js-login-password"/>
+                </dd>
+              </dl>
+              <div class="login-button-wrapper">
+                <div class="cursor-wrapper">
+                  <div class="cursor"></div>
+                </div>
+                <button type="submit" class="button js-sound-cursor">LOGIN</button>
+              </div>
+            </form>
           </div>
-        </li>
-        <li>
-          <a href="https://metakirby5.github.io/yorha/">HTML/CSS</a>
-        </li>
-      </ul>
-
-      <hr>
-
-      <div class="option sound-cursor">
-        <p class="option-text">Hovered</p>
-      </div>
-
-      <hr>
-
-      <div class="spinner">
-        <div class="spinner-middle">
-          <div class="spinner-inner"></div>
         </div>
       </div>
-
-      <hr>
-
-      <div class="scroll-bar">
-        <p class="scroll-bar-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et tellus magna. Donec lacus velit, vehicula sed massa aliquet, aliquet iaculis dui. Integer eget accumsan nibh. Donec accumsan mi nec nisl luctus pulvinar. Donec consequat non metus quis tempus. Sed non eros mollis, pulvinar ex et, blandit ex. Sed ex risus, condimentum facilisis euismod et, ullamcorper at felis. Fusce vel convallis nibh, sit amet molestie magna.</p>
-        <p class="scroll-bar-text">Aliquam et magna aliquet, commodo leo ac, volutpat erat. Sed in facilisis neque. Nam convallis finibus tincidunt. Sed eget porttitor justo, non sollicitudin lectus. Nunc efficitur ipsum ut purus cursus malesuada. Cras metus nibh, convallis non scelerisque eu, cursus ac turpis. Proin iaculis sem vel sapien facilisis, et elementum lacus euismod.</p>
-        <p class="scroll-bar-text">Curabitur euismod, augue eget convallis tincidunt, sapien urna bibendum tellus, luctus commodo purus dolor ut nisl. Nam feugiat placerat orci, quis porttitor est semper id. Aenean vehicula fermentum imperdiet. Cras in semper arcu, in ultrices odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam imperdiet laoreet vehicula. Phasellus mi nisl, vulputate non feugiat a, semper sit amet enim. In sed leo mollis, pellentesque dolor at, ultrices dolor. Etiam viverra nisi ut neque vehicula consectetur vitae vitae ipsum. Integer sed est imperdiet, imperdiet libero vel, ultricies mi. Ut tempus eget leo a convallis. Curabitur iaculis viverra sodales. Suspendisse eleifend mauris a justo elementum, eget molestie magna mattis.</p>
-      </div>
     </div>
-    <script src="/js/index.js"></script>
+    <script src="/js/clock.js"></script>
+    <script src="/js/login.js"></script>
+    <script src="/js/ui.js"></script>
+    <script src="/js/todo.js"></script>
+    <script src="/js/sound.js"></script>
   </body>
 </html>
