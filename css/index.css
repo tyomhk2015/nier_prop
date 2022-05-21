@@ -454,6 +454,27 @@ footer {
     display: none;
   }
 }
+
+/* 
+ * Big Logo
+ */
+.big-logo {
+  position: absolute;
+  top: 50%;
+  width: 100vw;
+  height: 300px;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  background-image: url(../image/logo_light.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  opacity: 1;
+  transition: opacity 0.3s;
+  transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.3);
+}
+.big-logo.hidden {
+  opacity: 0;
+}
 /*
  * Props
  */
