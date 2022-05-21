@@ -7,7 +7,8 @@ const loginID = loginForm.querySelector(".js-login-id");
 const loginPassword = loginForm.querySelector(".js-login-password");
 const logoutTab = document.querySelector('.js-logout');
 
-let userTodo;
+let USER_ID;
+let USER_TODOS;
 
 const findUser = () => {
   const loadedUser = localStorage.getItem(KEY);
@@ -37,16 +38,18 @@ const showLogin = () => {
 }
 
 const loadData = (loadedUser) => {
-  userTodo = JSON.parse(localStorage.getItem(loadedUser));
-  console.log(userTodo);
+  USER_ID = loadedUser;
+  USER_TODOS = JSON.parse(localStorage.getItem(loadedUser));
 }
 
 const registerUser = (id) => {
-  const userTodo = {
+  const newTodos = {
     todo: []
   }
+  USER_ID = id;
+  USER_TODOS = newTodos;
   localStorage.setItem(KEY, id);
-  localStorage.setItem(id, JSON.stringify(userTodo));
+  localStorage.setItem(id, JSON.stringify(USER_TODOS));
 }
 
 const showAnimation = () => {
@@ -66,6 +69,13 @@ const toggleLogoutTab = (mode) => {
   }
 }
 
+const resetInput = () => {
+  loginID.value = "";
+  loginPassword.value = "";
+  loginID.placeholder = "";
+  loginPassword.placeholder = "";
+}
+
 const logout = () => {
   localStorage.removeItem(KEY);
   toggleLogoutTab('logout');
@@ -83,13 +93,11 @@ const login = (e) => {
     return;
   }
 
-  loginID.value = "";
-  loginPassword.value = "";
-
   showAnimation();
   playMenuOpenSound();
   registerUser(inputID);
   toggleLogoutTab('login');
+  setTimeout(resetInput, 300);
 }
 
 loginForm.addEventListener("submit", login);

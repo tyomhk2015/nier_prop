@@ -24,27 +24,31 @@
           </ul>
         </nav>
       </header>
-      <hr>
       <main>
         <div class="content-wrapper js-content-wrapper">
-          <section class="home js-home js-content">
+          <section class="home js-home js-content active">
             <h2>HOME</h3>
             <div class="profile">
               <p>突如侵略してきた異星人。そして、彼らが繰り出す兵器「機械生命体」。圧倒的戦力の前に、人類は地上を追われ月へと逃げ延びていた。</p>
             </div>
           </section>
-          <section class="todo js-todo js-content active">
+          <section class="todo js-todo js-content">
             <h2>TODO</h3>
             <div class="todo-wrapper">
               <div class="todo-display menu">
                 <div class="menu-head">TASK</div>
-                <div class="menu-body"></div>
+                <div class="menu-body scroll-bar">
+                  <ul class="todo-lists js-todo-lists"></ul>
+                </div>
               </div>
-              <form class="todo-form menu">
+              <form class="todo-form menu js-todo-form">
                 <div class="menu-head">REGISTER</div>
                 <div class="menu-body">
-                  <input type="text" class="text-input todo-input" placeholder="YOUR TASK"/>
-                  <button class="button js-sound-cursor js-todo-submit">Enter</button>
+                  <div class="todo-input-wrapper">
+                    <p class="todo-guide">Enter your task</p>
+                    <input type="text" class="text-input todo-input js-todo-input" />
+                  </div>
+                  <button class="button todo-button js-sound-cursor js-todo-submit">Enter</button>
                 </div>
               </form>
             </div>
@@ -53,11 +57,10 @@
             <h2>GALLERY</h3>
           </section>
           <section class="weather js-weather js-content">
-            <h3>WEATHER</h3>
+            <h2>WEATHER</h2>
           </section>
         </div>
       </main>
-      <hr>
       <footer>
         <div class="clock-wrapper js-clock-wrapper">
           <div class="cursor-wrapper">

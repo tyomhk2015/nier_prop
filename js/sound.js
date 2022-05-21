@@ -31,10 +31,14 @@ const playCancelSound = (e) => {
   audio.play();
 }
 
-const cursorSoundTriggers = document.querySelectorAll(".js-sound-cursor");
-cursorSoundTriggers.forEach((trigger) => {
-  trigger.addEventListener("mouseover", playCursorSound);
-  trigger.addEventListener("mouseleave", () => {
-    toggleSoundState(false);
+const setCursorSoundTrigger = () => {
+  const cursorSoundTriggers = document.querySelectorAll(".js-sound-cursor");
+  cursorSoundTriggers.forEach((trigger) => {
+    trigger.addEventListener("mouseover", playCursorSound);
+    trigger.addEventListener("mouseleave", () => {
+      toggleSoundState(false);
+    });
   });
-});
+}
+
+setCursorSoundTrigger();
