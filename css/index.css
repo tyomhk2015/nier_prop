@@ -112,11 +112,9 @@ footer {
 }
 @media (max-width: 767px) {
   footer {
-    background-color: var(--main-color-light);
-    position: fixed;
+    border: none;
     bottom: 0;
     padding: 0.5rem;
-    width: 100%;
     z-index: 1;
   }
 }
