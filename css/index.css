@@ -134,6 +134,12 @@ footer {
   transform: translate(-50%, -50%);
   min-width: 840px;
   max-width: 1040px;
+  opacity: 1;
+  transition: opacity 0.3s;
+  transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.3);
+}
+.wrapper.hidden {
+  opacity: 0;
 }
 @media (max-width: 767px) {
   .wrapper {
@@ -435,6 +441,19 @@ footer {
   left: 39%;
 }
 
+/*
+ * Hide UI
+ */
+.hide-ui-wrapper {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+}
+@media (max-width: 767px) {
+  .hide-ui-wrapper{
+    display: none;
+  }
+}
 /*
  * Props
  */
