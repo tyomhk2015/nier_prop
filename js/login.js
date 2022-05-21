@@ -39,17 +39,14 @@ const showLogin = () => {
 
 const loadData = (loadedUser) => {
   USER_ID = loadedUser;
+  console.log(loadedUser);
   USER_TODOS = JSON.parse(localStorage.getItem(loadedUser));
 }
 
 const registerUser = (id) => {
-  const newTodos = {
-    todo: []
-  }
   USER_ID = id;
-  USER_TODOS = newTodos;
+  checkTodoExist();
   localStorage.setItem(KEY, id);
-  localStorage.setItem(id, JSON.stringify(USER_TODOS));
 }
 
 const showAnimation = () => {
@@ -83,6 +80,7 @@ const logout = () => {
   playCancelSound();
   resetTabContent();
   resetImage();
+  resetTodo();
 }
 
 const login = (e) => {
@@ -100,6 +98,7 @@ const login = (e) => {
   registerUser(inputID);
   toggleLogoutTab('login');
   paintImage();
+  showTodo();
   setTimeout(resetInput, 300);
 }
 

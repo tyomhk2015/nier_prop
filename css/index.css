@@ -135,9 +135,11 @@ footer {
   opacity: 1;
   transition: opacity 0.3s;
   transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.3);
+  z-index: 1;
 }
 .wrapper.hidden {
   opacity: 0;
+  pointer-events: none;
 }
 @media (max-width: 767px) {
   .wrapper {
@@ -462,13 +464,14 @@ footer {
   width: 100vw;
   height: 300px;
   transform: translateY(-50%);
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.8);
   background-image: url(../image/logo_light.png);
   background-repeat: no-repeat;
   background-position: center center;
   opacity: 1;
   transition: opacity 0.3s;
   transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.3);
+  z-index: 0;
 }
 .big-logo.hidden {
   opacity: 0;
