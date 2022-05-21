@@ -29,7 +29,7 @@
           <section class="home js-home js-content active">
             <h2>HOME</h3>
             <div class="profile">
-              <p>突如侵略してきた異星人。そして、彼らが繰り出す兵器「機械生命体」。圧倒的戦力の前に、人類は地上を追われ月へと逃げ延びていた。</p>
+              <p>突如侵略してきた異星人。そして、彼らが繰り出す兵器「機械生命体」。圧倒的戦力の前に、<br>人類は地上を追われ月へと逃げ延びていた。</p>
             </div>
           </section>
           <section class="todo js-todo js-content">
@@ -37,7 +37,7 @@
             <div class="todo-wrapper">
               <div class="todo-display menu">
                 <div class="menu-head">TASK</div>
-                <div class="menu-body scroll-bar">
+                <div class="menu-body scroll-bar left-border dim">
                   <ul class="todo-lists js-todo-lists"></ul>
                 </div>
               </div>
@@ -55,6 +55,9 @@
           </section>
           <section class="gallery js-gallery js-content">
             <h2>GALLERY</h3>
+            <div class="gallery-container">
+              <img src="/image/bg/5.jpg" class="gallery-content js-gallery-content" alt="Nier Automata Concept Art"/>
+            </div>
           </section>
           <section class="weather js-weather js-content">
             <h2>WEATHER</h2>
@@ -104,10 +107,14 @@
         </div>
       </div>
     </div>
+    <div class="hide-ui-wrapper">
+      <button class="hide-ui-button"></button>
+    </div>
     <script src="/js/clock.js"></script>
     <script src="/js/login.js"></script>
     <script src="/js/ui.js"></script>
     <script src="/js/todo.js"></script>
+    <script src="/js/gallery.js"></script>
     <script src="/js/sound.js"></script>
   </body>
 </html>

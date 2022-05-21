@@ -81,6 +81,8 @@ const logout = () => {
   toggleLogoutTab('logout');
   showLogin();
   playCancelSound();
+  resetTabContent();
+  resetImage();
 }
 
 const login = (e) => {
@@ -97,6 +99,7 @@ const login = (e) => {
   playMenuOpenSound();
   registerUser(inputID);
   toggleLogoutTab('login');
+  paintImage();
   setTimeout(resetInput, 300);
 }
 

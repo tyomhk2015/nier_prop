@@ -44,6 +44,7 @@ const closeToDo = (e) => {
 }
 
 const showTodo = () => {
+  checkTodoExist();
   USER_TODOS = JSON.parse(localStorage.getItem(USER_ID));
 
   const fragment = new DocumentFragment();
@@ -83,8 +84,7 @@ const registerTodo = (e) => {
     id: new Date().getTime(),
     text: todoInput.value
   }
-  
-  checkTodoExist();
+
   saveTodo(task);
   resetTodo();
   showTodo();

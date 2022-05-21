@@ -18,10 +18,16 @@ body {
   background-color: #d1cdb7;
   background-image: linear-gradient(to right, #ccc8b1 1px, rgba(204,200,177,0) 1px), linear-gradient(to bottom, #ccc8b1 1px, rgba(204,200,177,0) 1px);
   background-size: .3rem .3rem;
+  height: 100vh;
+  max-height: 1080px;
   font-family: helvetica, sans-serif;
   line-height: 1.5;
   letter-spacing: 1px;
-  padding: 3rem 4rem;
+  padding: 6rem 0;
+  position: relative;
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 @media (max-width: 767px) {
   body {
@@ -70,6 +76,7 @@ header {
   display: flex;
   align-items: center;
   padding: 1rem 1rem 1rem 2rem;
+  border-bottom: 2px solid var(--main-color-dark);
 }
 @media (max-width: 767px) {
   header {
@@ -88,27 +95,52 @@ hr {
 }
 
 main {
-  border-top: 2px solid var(--main-color-dark);
-  border-bottom: 2px solid var(--main-color-dark);
-  padding: 2rem 1rem;
+  padding: 2rem 4rem;
+  overflow: hidden;
+  height: 604px;
 }
 @media (max-width: 767px) {
   main {
-    padding: 1rem 0.5rem;
+    padding: 1rem 0.5rem 3.5rem;
+    overflow-y: auto;
+    height: unset;
   }
 }
 footer {
+  border-top: 2px solid var(--main-color-dark);
   padding: 1rem;
 }
 @media (max-width: 767px) {
   footer {
+    background-color: var(--main-color-light);
+    position: fixed;
+    bottom: 0;
     padding: 0.5rem;
+    width: 100%;
+    z-index: 1;
   }
 }
 
 /*
  * Class Names
  */
+.wrapper {
+  background-color: #d1cdb7;
+  background-image: linear-gradient(to right, #ccc8b1 1px, rgba(204,200,177,0) 1px), linear-gradient(to bottom, #ccc8b1 1px, rgba(204,200,177,0) 1px);
+  background-size: .3rem .3rem;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 840px;
+  max-width: 1040px;
+}
+@media (max-width: 767px) {
+  .wrapper {
+    height: 100vh;
+    min-width: unset;
+  }
+}
 
 /*
  * Header
@@ -157,17 +189,23 @@ footer {
 .weather.active {
   display: block;
 }
+
+/* To Do */
 .todo-wrapper {
   display: flex;
   align-items: stretch;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  margin-top: 3rem;
+}
+@media (max-width: 767px) {
+  .todo-wrapper {
+    margin-top: 1rem;
+  }
 }
 .todo-display,
 .todo-form {
-  margin-top: 1rem;
-  min-width: 300px;
-  max-width: 400px;
+  max-width: 350px;
   width: 100%;
 }
 .todo-display > .menu-body,
@@ -191,6 +229,11 @@ footer {
   transform: translateX(-50%);
   opacity: 0.1;
   position: absolute;
+}
+@media (max-width: 767px) {
+  .todo-form {
+    margin-top: 1rem;
+  }
 }
 .todo-guide {
   font-weight: bold;
@@ -268,6 +311,17 @@ footer {
   background-color: var(--main-color-dark);
 }
 
+/* Gallery */
+.gallery-container {
+  margin-top: 3rem;
+  text-align: center;
+}
+.gallery-content {
+  width: 90%;
+  max-width: 900px;
+  object-fit: contain;
+}
+
 /*
  * Footer
  */
@@ -307,6 +361,7 @@ footer {
 .login-modal.initializing {
   background-image: linear-gradient(to right, #ccc8b1 1px, rgba(50,50,50,0) 1px), linear-gradient(to bottom, #ccc8b1 1px, rgba(0,0,0,0) 1px);
   background-size: 5rem 5rem;
+  background-position: center center;
   animation: initialization alternate 0.3s;
 }
 @keyframes initialization {
