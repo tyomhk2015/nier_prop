@@ -219,6 +219,9 @@ footer {
   height: 360px;
   position: relative;
 }
+.todo-display > .menu-body {
+  padding: 0 0 0 1rem;
+}
 .todo-form > .menu-body {
   padding: 5rem 1rem;
   overflow: hidden;
@@ -267,6 +270,9 @@ footer {
 .todo-button {
   display: block;
   margin: 2rem auto 0;
+}
+.todo-lists.left-border::before {
+  left: -16px;
 }
 .todo-list {
   display: flex;
