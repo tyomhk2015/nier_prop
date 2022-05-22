@@ -34,4 +34,4 @@ const resetImage = () => {
   document.body.style.backgroundRepeat = DEFAULT_BG.repeat;
 }
 
-setInterval(changeGalleryImage, 3000);
+setInterval(changeGalleryImage, 2000);

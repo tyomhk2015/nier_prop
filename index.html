@@ -27,8 +27,12 @@
         <div class="content-wrapper js-content-wrapper">
           <section class="home js-home js-content active">
             <h2>HOME</h3>
-            <div class="profile">
-              <p>突如侵略してきた異星人。そして、彼らが繰り出す兵器「機械生命体」。圧倒的戦力の前に、<br>人類は地上を追われ月へと逃げ延びていた。</p>
+            <div class="profile-wrapper">
+              <p>突如侵略してきた異星人。<br>そして、彼らが繰り出す兵器「機械生命体」。圧倒的戦力の前に、<br>人類は地上を追われ月へと逃げ延びていた。</p>
+            </div>
+            <div class="welcome-wrapper menu-body">
+              <h3 class="welcome-message">Welcome</h3>
+              <p class="welcome-user js-welcome-user"></p>
             </div>
           </section>
           <section class="todo js-todo js-content">
@@ -107,6 +111,26 @@
     <div class="hide-ui-wrapper">
       <button class="button hide-ui-button js-hide-ui-button js-sound-cursor">Hide UI</button>
     </div>
+    <div class="music-wrapper js-music-wrapper">
+      <div class="music-player js-music-player">
+        <div class="previous js-music-shifter">
+          <div class="cursor-wrapper">
+            <div class="cursor"></div>
+          </div>
+        </div>
+        <p class="music-title js-music-title">Music Title</p>
+        <div class="spinner js-music-status inactive">
+          <div class="spinner-middle">
+            <div class="spinner-inner"></div>
+          </div>
+        </div>
+        <div class="next js-music-shifter">
+          <div class="cursor-wrapper">
+            <div class="cursor"></div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="big-logo js-big-logo hidden"></div>
     <script src="/js/weather.js"></script>
     <script src="/js/gallery.js"></script>
@@ -115,5 +139,6 @@
     <script src="/js/ui.js"></script>
     <script src="/js/todo.js"></script>
     <script src="/js/sound.js"></script>
+    <script src="/js/music.js"></script>
   </body>
 </html>

@@ -20,6 +20,7 @@ body {
   background-size: .3rem .3rem;
   height: 100vh;
   max-height: 1080px;
+  min-width: 320px;
   font-family: helvetica, sans-serif;
   line-height: 1.5;
   letter-spacing: 1px;
@@ -98,12 +99,49 @@ main {
   padding: 2rem 4rem;
   overflow: hidden;
   height: 604px;
+  position: relative;
+}
+main::before {
+  content: '';
+  width: 800px;
+  height: 600px;
+  right: 0;
+  bottom: 0;
+  background-image: url(../image/main_smoke.png);
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  opacity: 0.2;
+  z-index: 0;
+}
+main::after {
+  content: '';
+  width: 300px;
+  height: 400px;
+  right: 0;
+  bottom: 0;
+  background-image: url(../image/main_bg.png);
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  opacity: 0.1;
+  z-index: 0;
 }
 @media (max-width: 767px) {
   main {
     padding: 1rem 0.5rem 3.5rem;
     overflow-y: auto;
     height: unset;
+  }
+  main::before {
+    width: 400px;
+    height: 600px;
+  }
+  main::after {
+    width: 200px;
+    height: 300px;
   }
 }
 footer {
@@ -118,7 +156,7 @@ footer {
     display: block;
     border: none;
     bottom: 0;
-    padding: 0.5rem;
+    padding: 0.5rem 0.5rem 5rem 0.5rem;
     z-index: 1;
   }
 }
@@ -184,8 +222,24 @@ footer {
 /*
  * Main
  */
-.profile {
-  
+.profile-wrapper,
+.welcome-wrapper {
+  margin-top: 3rem;
+}
+.welcome-wrapper.menu-body {
+  position: relative;
+  width: 50%;
+  padding: 5rem 0;
+  z-index: 1;
+  text-align: center;
+}
+.welcome-message.menu-body {
+  background-color: var(--main-color-light);
+}
+@media (max-width: 767px) {
+  .welcome-message.menu-body {
+    padding: 3rem 0;
+  }
 }
 .home,
 .todo,
@@ -227,6 +281,7 @@ footer {
 .todo-form > .menu-body {
   padding: 5rem 1rem;
   overflow: hidden;
+  z-index: 1;
 }
 .todo-form > .menu-body::after {
   content: "";
@@ -329,6 +384,8 @@ footer {
 .gallery-container {
   margin-top: 3rem;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 .gallery-content {
   width: 90%;
@@ -409,6 +466,20 @@ footer {
   transform: translate(-50%, -50%);
   min-width: 300px;
 }
+.login-wrapper::after {
+  content: '';
+  width: 100px;
+  height: 200px;
+  right: 0;
+  top: 0;
+  background-image: url(../image/main_pod.png);
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  opacity: 0.1;
+  z-index: 0;
+}
 .login-container {
   display: flex;
   align-items: center;
@@ -420,7 +491,6 @@ footer {
     padding: 0;
   }
 }
-
 .login-form {
   margin-top: 2rem;
 }
@@ -473,6 +543,81 @@ footer {
   .hide-ui-wrapper{
     display: none;
   }
+}
+
+/*
+ * Music player UI
+ */
+.music-wrapper {
+  background-color: #bab5a1;
+  position: absolute;
+  padding: 1rem;
+  width: 360px;
+  left: 1rem;
+  bottom: 1rem;
+  transition: background-color 0.1s;
+}
+@media (max-width: 767px) {
+  .music-wrapper {
+    position: fixed;
+    z-index: 2;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+.music-wrapper:hover {
+  background-color: var(--main-color-light);
+}
+.music-player {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.music-player > .previous,
+.music-player > .next {
+  position: absolute;
+  content: '';
+  display: flex;
+  width: 1rem;
+  height: 1rem;
+  padding: 1.5rem;
+  opacity: 0.5;
+  transition: opacity 0.1s;
+}
+.music-player:hover > .previous:hover,
+.music-player:hover > .next:hover {
+  opacity: 1;
+}
+.music-player > .previous {
+  transform: rotate(180deg);
+}
+.music-player > .next {
+  right: -1rem;
+}
+.music-player > .previous {
+  left: -1rem;
+}
+.music-player .cursor-wrapper {
+  top: 36%;
+  z-index: 0;
+}
+.music-wrapper .spinner {
+  position: absolute;
+  right: 12%;
+  background-color: #bab5a1;
+  transform: scale(0.6);
+  transition: background-color 0.1s;
+}
+.music-player .spinner-middle::before {
+  width: 30px;
+  height: 30px;
+}
+.music-wrapper:hover .spinner {
+  background-color: var(--main-color-light);
+}
+.music-title {
+  text-indent: -3rem;
 }
 
 /* 
@@ -657,9 +802,9 @@ footer {
   position: absolute;
   top: 50%;
   left: 50%;
-  animation: swirl 1s linear infinite;
+  animation: swirl 1.3s linear infinite;
   opacity: 1;
-  transition: opacity 0.2s;
+  transition: opacity 1s;
 }
 .spinner.inactive > .spinner-middle::before {
   opacity: 0;
