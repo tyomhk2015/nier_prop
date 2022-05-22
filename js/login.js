@@ -6,6 +6,7 @@ const loginForm = document.querySelector(".js-login-form");
 const loginID = loginForm.querySelector(".js-login-id");
 const loginPassword = loginForm.querySelector(".js-login-password");
 const logoutTab = document.querySelector('.js-logout');
+const welcomeMsg = document.querySelector(".js-welcome-user");
 
 let USER_ID;
 let USER_TODOS;
@@ -16,6 +17,7 @@ const findUser = () => {
     loadData(loadedUser);
     toggleLogoutTab('login');
     paintImage();
+    greetUser();
   } else {
     showLogin();
   }
@@ -73,6 +75,10 @@ const resetInput = () => {
   loginPassword.placeholder = "";
 }
 
+const greetUser = () => {
+  welcomeMsg.innerText = USER_ID;
+}
+
 const logout = () => {
   localStorage.removeItem(KEY);
   toggleLogoutTab('logout');
@@ -81,6 +87,7 @@ const logout = () => {
   resetTabContent();
   resetImage();
   resetTodo();
+  stopMusic();
 }
 
 const login = (e) => {
@@ -100,6 +107,8 @@ const login = (e) => {
   paintImage();
   showTodo();
   setTimeout(resetInput, 300);
+  selectMusic();
+  greetUser();
 }
 
 loginForm.addEventListener("submit", login);

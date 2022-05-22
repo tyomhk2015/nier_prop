@@ -1,7 +1,6 @@
 const EMIL = ["1906267d037b","","18f43320c26","","985d90f04"];
 
 const weatherDOM = document.querySelector(".js-weather");
-console.log(weatherDOM);
 
 const displayWeather = (city, temp, weather) => {
   weatherDOM.innerText = `${city} ${temp}ºC ${weather}`;
