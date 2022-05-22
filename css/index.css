@@ -107,11 +107,15 @@ main {
   }
 }
 footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   border-top: 2px solid var(--main-color-dark);
   padding: 1rem;
 }
 @media (max-width: 767px) {
   footer {
+    display: block;
     border: none;
     bottom: 0;
     padding: 0.5rem;
@@ -185,14 +189,12 @@ footer {
 }
 .home,
 .todo,
-.gallery,
-.weather {
+.gallery {
   display: none;
 }
 .home.active,
 .todo.active,
-.gallery.active,
-.weather.active {
+.gallery.active {
   display: block;
 }
 
@@ -337,6 +339,18 @@ footer {
 /*
  * Footer
  */
+.weather-container {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.weather-container.active {
+  opacity: 1;
+}
+@media (max-width: 767px) {
+  .weather-container {
+    text-align: right;
+  }
+}
 .clock-wrapper {
   display: flex;
   justify-content: flex-end;

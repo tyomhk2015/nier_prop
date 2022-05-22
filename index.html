@@ -19,7 +19,6 @@
             <li id="home" class="option active js-sound-cursor js-tab"><p class="option-text">HOME</p></li>
             <li id="todo" class="option js-sound-cursor js-tab"><p class="option-text">TO DO</p></li>
             <li id="gallery" class="option js-sound-cursor js-tab"><p class="option-text">GALLERY</p></li>
-            <li id="weather" class="option js-sound-cursor js-tab"><p class="option-text">WEATHER</p></li>
             <li id="logout" class="option logout inactive js-sound-cursor js-logout"><p class="option-text">LOGOUT</p></li>
           </ul>
         </nav>
@@ -59,12 +58,10 @@
               <img src="/image/bg/5.jpg" class="gallery-content js-gallery-content" alt="Nier Automata Concept Art"/>
             </div>
           </section>
-          <section class="weather js-weather js-content">
-            <h2>WEATHER</h2>
-          </section>
         </div>
       </main>
       <footer>
+        <p class="weather-container js-weather"></p>
         <div class="clock-wrapper js-clock-wrapper">
           <div class="cursor-wrapper">
             <div class="cursor"></div>
@@ -111,6 +108,7 @@
       <button class="button hide-ui-button js-hide-ui-button js-sound-cursor">Hide UI</button>
     </div>
     <div class="big-logo js-big-logo hidden"></div>
+    <script src="/js/weather.js"></script>
     <script src="/js/gallery.js"></script>
     <script src="/js/clock.js"></script>
     <script src="/js/login.js"></script>
