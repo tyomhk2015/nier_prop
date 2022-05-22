@@ -11,7 +11,7 @@ const CUSTOM_IMAGE_SETTING = {
 }
 
 const BG_IMAGES_PATH = "/image/bg/";
-const BG_IMAGES = [1,2,3,4,5];
+const BG_IMAGES = [1,2,3,4,5,6,7];
 const BG_IMAGES_EXTENSION = ".jpg";
 
 const galleryImg = document.querySelector(".js-gallery-content");

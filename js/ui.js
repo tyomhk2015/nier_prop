@@ -3,6 +3,7 @@ const navigationUL = document.querySelector(".js-navigation-ul");
 const contentWrapper = document.querySelector(".js-content-wrapper");
 const hideUIBtn = document.querySelector(".js-hide-ui-button");
 const wrapper = document.querySelector(".js-wrapper");
+const bigLogo = document.querySelector(".js-big-logo");
 
 const switchTab = (tab) => {
   if(tab.classList.contains(ACTIVE_CLASS_NAME)) return;
@@ -26,10 +27,12 @@ const resetTabContent = () => {
 const toggleBrowser = (e) => {
   if(wrapper.classList.contains(HIDDEN_CLASS_NAME)) {
     wrapper.classList.remove(HIDDEN_CLASS_NAME);
+    bigLogo.classList.add(HIDDEN_CLASS_NAME);
     e.target.innerText = "Hide UI"
     playMenuOpenSound();
   } else {
     wrapper.classList.add(HIDDEN_CLASS_NAME)
+    bigLogo.classList.remove(HIDDEN_CLASS_NAME);
     e.target.innerText = "Show UI"
     playCancelSound();
   }
